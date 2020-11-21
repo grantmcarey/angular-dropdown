@@ -21,13 +21,13 @@ export class CustomDropdownComponent implements OnInit {
   @Input() 
   options: any;
 
-  @Output() 
+  // @Output() 
   currentSelectionChange = new EventEmitter<object>();
   _currentSelection: any;
   get currentSelection() {
     return this._currentSelection;
   }
-  
+
   @Input()
   set currentSelection(value) {
     this._currentSelection =

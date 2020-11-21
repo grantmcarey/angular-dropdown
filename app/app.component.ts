@@ -13,11 +13,13 @@ import {
   templateUrl: "./app.component.html"
 })
 export class AppComponent {
-  emptyDataSelection = {
-    name: "Select"
-  };
 
-  @Input()
+  emptyDataSelection = {
+    name: 'Select'
+  };
+ 
+
+  // @Input()
   options = [
     { name: "Any", id: 1 },
     { name: "AII", id: 2 },
@@ -28,7 +30,28 @@ export class AppComponent {
     { name: "Contact", id: 7 },
     { name: "Report", id: 8 }
   ];
+
   currentSelection = {
     name: "Filter Search"
   };
+  
+  currentSelectionChange = new EventEmitter<object>();
+  _currentSelection: any;
+  get currentSelection() {
+    return this._currentSelection;
+  }
+  
+  set currentSelection(value) {
+    this._currentSelection =
+      value === '' || value === null || value === undefined
+        ? this.emptyDataSelection
+        : value;
+  }
+
+
+
+  setCurrentSelection(option) {
+    this.currentSelection = option;
+    this.currentSelectionChange.emit(option);
+  }
 }
