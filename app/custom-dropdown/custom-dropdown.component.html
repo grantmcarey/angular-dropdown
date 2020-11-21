@@ -1,10 +1,9 @@
-
-
 <div ngbDropdown class="d-inline-block" style="width:100%">
-	<button class="btn btn-lg btn-info" style="width:100%" id="company" ngbDropdownToggle>{{currentSelection?.name}}</button>
+	<button class="btn btn-lg btn-info" style="width:100%"  ngbDropdownToggle>{{currentSelection?.name}}</button>
 	<div class="cp" ngbDropdownMenu aria-labelledby="dropdownBasic1">
 		<div class="cp-dropdown__select">
-			<h3 class="cp-dropdown__select-option" *ngFor="let option of options" (click)="setCurrentSelection(option)">{{option?.name}}</h3>
+			<h3 class="cp-dropdown__select-option" *ngFor="let option of options" (click)="setCurrentSelection(option)">
+				{{option?.name}}</h3>
 		</div>
 	</div>
 </div>

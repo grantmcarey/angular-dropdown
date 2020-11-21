@@ -27,6 +27,7 @@ export class CustomDropdownComponent implements OnInit {
   get currentSelection() {
     return this._currentSelection;
   }
+  
   @Input()
   set currentSelection(value) {
     this._currentSelection =
